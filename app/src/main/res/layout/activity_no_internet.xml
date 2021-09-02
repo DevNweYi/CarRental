@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.NoInternetViewModel" />
+    </data>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NoInternetActivity"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <ImageButton android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_24"
+            app:tint="@color/red"
+            android:background="@drawable/btn_transparent"
+            android:onClick="@{()->viewModel.onCloseClicked()}"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_launcher_background"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_internet_connection"
+                android:textColor="@color/primary_500"
+                android:padding="10dp"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"/>
+
+            <Button android:id="@+id/btn_retry"
+                android:text="@string/retry"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:background="@drawable/btn_primary500_5r"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:onClick="@{()->viewModel.onRetryClicked()}"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

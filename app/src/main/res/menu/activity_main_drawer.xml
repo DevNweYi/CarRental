@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_24"
+            android:title="@string/menu_home"
+            android:iconTint="@color/primary_500"/>
+        <item
+            android:id="@+id/nav_search_car"
+            android:icon="@drawable/ic_search_24"
+            android:title="@string/menu_search_car"
+            android:iconTint="@color/primary_500"/>
+        <item
+            android:id="@+id/nav_booking"
+            android:icon="@drawable/ic_directions_car_24"
+            android:title="@string/menu_booking"
+            android:iconTint="@color/primary_500"/>
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_account_box_24"
+            android:title="@string/menu_profile"
+            android:iconTint="@color/primary_500"/>
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_history_24"
+            android:title="@string/menu_history"
+            android:iconTint="@color/primary_500"/>
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_feedback"
+                android:icon="@drawable/ic_feedback_24"
+                android:title="@string/menu_feedback"
+                android:iconTint="@color/primary_500"/>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_settings_applications_24"
+                android:title="@string/menu_setting"
+                android:iconTint="@color/primary_500"/>
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_24"
+                android:title="@string/menu_logout"
+                android:iconTint="@color/primary_500"/>
+        </menu>
+    </item>
+</menu>

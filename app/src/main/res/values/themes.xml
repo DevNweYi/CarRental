@@ -1,0 +1,243 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CarRental" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimaryVariant">@color/primary_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent_200</item>
+        <item name="colorSecondaryVariant">@color/accent_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.CarRental.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="Theme.CarRental.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CarRental.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTitleRent">
+        <item name="android:text">@string/rent</item>
+        <item name="android:textSize">@dimen/text_larger</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/accent_200</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTitleCar">
+        <item name="android:text">@string/car</item>
+        <item name="android:textSize">@dimen/text_larger</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ForTrip">
+        <item name="android:text">@string/for_trip</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BtnAccent200Full">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_accent200_5r</item>
+    </style>
+
+    <style name="BtnPrimary500Full">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_primary500_5r</item>
+    </style>
+
+    <style name="BtnWhiteFull">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_500</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_white_5r</item>
+    </style>
+
+    <style name="BtnTransparentFull">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_transparent</item>
+    </style>
+
+    <style name="TextInputLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/accent_200</item>
+        <item name="errorIconTint">@color/accent_200</item>
+        <item name="boxStrokeErrorColor">@color/accent_200</item>
+    </style>
+
+    <style name="EditTextFull">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="NavigationDrawer">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BtnBottomMenu">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/primary_500</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_transparent</item>
+    </style>
+
+    <style name="SubTitle">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="SubTitleDescription">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="SpecificationTextView">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/light_gray</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:background">@drawable/bd_primary200_10r</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawableTint">@color/light_gray</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="ProductRatingStar">
+        <item name="android:tint">@color/light_gray</item>
+        <item name="android:src">@drawable/ic_baseline_star_24</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="PickUpDropOffEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:background">@drawable/bd_light_gray_5r</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
+    <style name="LocationImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_my_location_24</item>
+        <item name="android:tint">@color/primary_500</item>
+        <item name="android:background">@drawable/btn_transparent</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="BookingDateTimeCardView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="BookingDateTimeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/btn_light_x_gray</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="BookingDateTimeLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:drawableTint">@color/dark_gray</item>
+    </style>
+
+    <style name="BookingDateTimeValue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textStyle">bold</item>
+<!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
+    <style name="DialogOk">
+        <item name="android:text">@string/ok</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_primary500_5r</item>
+        <item name="android:paddingLeft">50dp</item>
+        <item name="android:paddingRight">50dp</item>
+    </style>
+
+    <style name="DialogCancel">
+        <item name="android:text">@string/cancel</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_light_x_gray</item>
+    </style>
+
+</resources>

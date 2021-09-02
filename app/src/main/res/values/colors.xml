@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_200">#FF596DB3</color>
+    <color name="primary_500">#FF3E4F87</color>
+    <color name="primary_700">#FF344271</color>
+    <color name="accent_200">#FFD1CD4D</color>
+    <color name="accent_700">#FFBAB646</color>
+    <color name="black">#FF333333</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#FFDA5052</color>
+    <color name="light_x_gray">#FFF0F1ED</color>
+    <color name="light_gray">#FFCCCCCC</color>
+    <color name="gray">#FF989AA8</color>
+    <color name="dark_gray">#FF495766</color>
+    <color name="light_yellow">#FFECEFCA</color>
+</resources>

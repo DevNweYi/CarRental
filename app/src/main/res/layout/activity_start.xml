@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.StartViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StartActivity"
+        android:background="@color/light_gray"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_xx_largest"
+            android:textColor="@color/primary_500"
+            android:textAllCaps="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/primary_500" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/BtnPrimary500Full"
+                android:text="@string/sign_in"
+                android:onClick="@{()->viewModel.onSignInClicked()}"/>
+
+            <androidx.appcompat.widget.AppCompatButton style="@style/BtnWhiteFull"
+                android:text="@string/sign_up"
+                android:layout_marginTop="10dp"
+                android:onClick="@{()->viewModel.onSignUpClicked()}"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

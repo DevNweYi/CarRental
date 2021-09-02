@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.CarDetailViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CarDetailActivity"
+        android:orientation="vertical"
+        android:background="@color/primary_500">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.productName}"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_larger"
+                android:textColor="@color/white"
+                tools:text="Sample Car"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.productDescription}"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/light_gray"
+                tools:text="Sample Car Description"
+                android:layout_marginTop="5dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_bus_56"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--<androidx.appcompat.widget.AppCompatTextView android:text="@string/specification"
+                        style="@style/SubTitle"
+                        android:textColor="@color/white"/>-->
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{viewModel.speedPerHour}"
+                                tools:text="210 Kmh"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{viewModel.gearSystem}"
+                                tools:text="Auto"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{viewModel.cylinder}"
+                                tools:text="4 Cyl"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{viewModel.fuelType}"
+                                tools:text="Gas"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{String.valueOf(viewModel.totalSeat).concat(@string/space).concat(@string/seat)}"
+                                tools:text="5 Seats"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{String.valueOf(viewModel.totalWindow).concat(@string/space).concat(@string/window)}"
+                                tools:text="4 Windows"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{String.valueOf(viewModel.allowPassengerNo).concat(@string/space).concat(@string/person)}"
+                                tools:text="5 Persons"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@{String.valueOf(viewModel.allowPassengerBag).concat(@string/space).concat(@string/bag)}"
+                                tools:text="5 Bags"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                            <androidx.appcompat.widget.AppCompatTextView style="@style/SpecificationTextView"
+                                android:text="@string/air_con"
+                                android:drawableTop="@drawable/ic_directions_car_24" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView android:text="@string/expert_rating"
+                        style="@style/SubTitle"
+                        android:textColor="@color/white"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView android:text="@string/expert_rating_info"
+                        style="@style/SubTitleDescription"
+                        android:textColor="@color/light_gray"/>
+
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_rating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        tools:listitem="@layout/item_product_rating"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </ScrollView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="#3A497A">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.pricePerDay.concat(@string/space).concat(@string/currency_mmk)}"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_regular"
+                    android:textColor="@color/white"
+                    tools:text="MMK 30,000"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/per_day"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_small"
+                    android:textColor="@color/light_gray" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_accent200_5r"
+                android:text="@string/book_for_renting"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/text_regular"
+                android:textAllCaps="false"
+                android:onClick="@{()->viewModel.onBookingClicked()}"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

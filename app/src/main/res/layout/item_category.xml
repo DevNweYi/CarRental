@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.ItemCategoryViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView android:id="@+id/card_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        card_view:cardCornerRadius="3dp"
+        android:layout_margin="5dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/btn_light_yellow"
+            android:onClick="@{()->viewModel.onCategoryItemClicked()}">
+<!--            android:background="@{viewModel.isSelected? @color/blue_500 : @color/light_yellow}"-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_directions_car_24"
+                android:tint="@color/accent_700"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.categoryName}"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/dark_gray"
+                android:paddingTop="10dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
