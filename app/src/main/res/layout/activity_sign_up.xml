@@ -71,6 +71,7 @@
                     android:singleLine="true"
                     android:text="@={viewModel.phoneNumber}"
                     tools:ignore="SpeakableTextPresentCheck" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout

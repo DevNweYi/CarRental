@@ -6,31 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
     android:orientation="vertical"
-    android:background="@color/primary_500">
+    android:background="@color/primary_500"
+    android:gravity="center">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.appcompat.widget.AppCompatImageView android:id="@+id/ivCar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/car1"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Testing"
-        android:textSize="@dimen/text_largest"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
-        tools:ignore="MissingConstraints" />
+        android:src="@drawable/car2" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

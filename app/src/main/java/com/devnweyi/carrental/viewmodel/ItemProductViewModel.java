@@ -1,11 +1,15 @@
 package com.devnweyi.carrental.viewmodel;
 
 import android.content.Context;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.devnweyi.carrental.CarDetailActivity;
 import com.devnweyi.carrental.model.ProductModel;
 
 import androidx.databinding.BaseObservable;
+import androidx.databinding.BindingAdapter;
 
 public class ItemProductViewModel extends BaseObservable {
 
@@ -49,6 +53,10 @@ public class ItemProductViewModel extends BaseObservable {
         return productModel.getPricePerDay();
     }
 
+    public String getSmallPhotoUrl(){
+        return productModel.getSmallPhotoUrl();
+    }
+
     // Allows recycling ItemProductViewModel within the recyclerview adapter
     public void setProductModel(ProductModel productModel) {
         this.productModel = productModel;
@@ -57,5 +65,10 @@ public class ItemProductViewModel extends BaseObservable {
 
     public void onProductItemClicked(){
         context.startActivity(CarDetailActivity.newIntent(context,productModel));
+    }
+
+    @BindingAdapter("smallPhoto")
+    public static void loadSmallPhoto(ImageView view, String smallPhotoUrl) {
+        Glide.with(view.getContext()).load(smallPhotoUrl).apply(new RequestOptions()).into(view);
     }
 }

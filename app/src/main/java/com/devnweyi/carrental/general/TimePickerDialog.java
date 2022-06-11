@@ -24,9 +24,7 @@ public class TimePickerDialog extends DialogFragment implements BookingViewModel
     static DataListener dataListener;
     android.app.AlertDialog showDialog;
 
-    public TimePickerDialog(){
-
-    }
+    public TimePickerDialog(){ }
 
     public TimePickerDialog(DataListener dataListener1){
         this.dataListener=dataListener1;

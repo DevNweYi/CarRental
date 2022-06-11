@@ -6,10 +6,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Api {
     private static Retrofit retrofit=null;
 
-    public static ApiInterface getClient(){
+    public static ApiInterface getClient(){  // this is manual dependency injection
         if(retrofit==null){
             retrofit=new Retrofit.Builder()
-                    .baseUrl("http://192.168.43.195/RentalWebService/")
+                    .baseUrl("http://192.168.99.92/RentalWebService/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

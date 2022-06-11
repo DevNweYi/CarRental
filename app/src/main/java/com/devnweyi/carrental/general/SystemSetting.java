@@ -1,13 +1,18 @@
 package com.devnweyi.carrental.general;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.View;
+import android.widget.TextView;
+
+import com.devnweyi.carrental.R;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -79,5 +84,13 @@ public class SystemSetting {
             }
         }
         return false;
+    }
+
+    public void showSnackBar(View view1) {
+        Snackbar snackbar = Snackbar.make(view1, "No Internet Connection!", Snackbar.LENGTH_LONG);
+        View view = snackbar.getView();
+        TextView textView = view.findViewById(R.id.snackbar_text);
+        textView.setTextColor(Color.GREEN);
+        snackbar.show();
     }
 }

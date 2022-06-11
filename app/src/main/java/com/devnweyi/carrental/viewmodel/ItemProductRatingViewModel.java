@@ -2,7 +2,6 @@ package com.devnweyi.carrental.viewmodel;
 
 import android.content.Context;
 
-import com.devnweyi.carrental.model.CategoryModel;
 import com.devnweyi.carrental.model.ProductRatingModel;
 
 import androidx.databinding.BaseObservable;
@@ -25,7 +24,7 @@ public class ItemProductRatingViewModel extends BaseObservable {
         return productRatingModel.getRating();
     }
 
-    // Allows recycling ItemCategoryViewModel within the recyclerview adapter
+    // Allows recycling ItemProductRatingViewModel within the recyclerview adapter
     public void setProductRatingModel(ProductRatingModel productRatingModel) {
         this.productRatingModel = productRatingModel;
         notifyChange();

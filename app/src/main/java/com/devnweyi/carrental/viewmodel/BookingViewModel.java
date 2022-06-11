@@ -3,21 +3,23 @@ package com.devnweyi.carrental.viewmodel;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import android.widget.Toast;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.devnweyi.carrental.BR;
-import com.devnweyi.carrental.R;
 import com.devnweyi.carrental.api.Api;
 import com.devnweyi.carrental.general.SystemSetting;
 import com.devnweyi.carrental.general.TimePickerDialog;
 import com.devnweyi.carrental.model.BookingModel;
+import com.devnweyi.carrental.model.DriverModel;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,6 +32,7 @@ public class BookingViewModel extends BaseObservable {
     TimeListener timeListener;
     static boolean isPickUpTime;
     SystemSetting systemSetting=new SystemSetting();
+    List<DriverModel> lstDriver=new ArrayList<>();
 
     public BookingViewModel(Context context,BookingModel bookingModel,DataListener dataListener){
         this.context=context;
@@ -153,6 +156,10 @@ public class BookingViewModel extends BaseObservable {
         bookingModel.setTotalAmount(totalAmount);
     }
 
+    public String getDetailPhotoUrl(){
+        return bookingModel.getDetailPhotoUrl();
+    }
+
     @Bindable
     private String tripPlaceMessage=null;
     public String getTripPlaceMessage() {
@@ -204,17 +211,35 @@ public class BookingViewModel extends BaseObservable {
     }
 
     private void sendBooking(BookingModel bookingModel){
-//        Api.getClient().sendBooking(bookingModel);
         (Api.getClient().sendBooking(bookingModel)).enqueue(new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
                 if(response.isSuccessful()) {
-                    Toast.makeText(context, response.toString(), Toast.LENGTH_LONG).show();
+                    getDriver(bookingModel.getProductID());
+                }else{
+                    if(dataListener!=null)dataListener.onBookingFail();
                 }
             }
 
             @Override
             public void onFailure(Call call, Throwable t) {
+                Log.e("error",t.toString());
+            }
+        });
+    }
+
+    private void getDriver(int productId){
+        (Api.getClient().getDriver(productId)).enqueue(new Callback<List<DriverModel>>() {
+            @Override
+            public void onResponse(Call<List<DriverModel>> call, Response<List<DriverModel>> response) {
+                lstDriver = response.body();
+                if(lstDriver==null)lstDriver=new ArrayList<>();
+                if(dataListener!=null)dataListener.onBookingSuccess(lstDriver.get(0));
+            }
+
+            @Override
+            public void onFailure(Call<List<DriverModel>> call, Throwable t) {
+                // if error occurs in network transaction then we can get the error in this method.
                 Log.e("error",t.toString());
             }
         });
@@ -284,10 +309,17 @@ public class BookingViewModel extends BaseObservable {
         return true;
     }
 
+    @BindingAdapter("detailPhotoInBooking")
+    public static void loadDetailPhotoInBooking(ImageView view, String detailPhotoUrl) {
+        Glide.with(view.getContext()).load(detailPhotoUrl).apply(new RequestOptions()).into(view);
+    }
+
     public interface DataListener{
+        void onBookingSuccess(DriverModel driverModel);
         void onPickUpDateClicked();
         void onDropOffDateClicked();
         void onMapLoaded(boolean isPickUpLocation);
+        void onBookingFail();
     }
 
     public interface TimeListener{

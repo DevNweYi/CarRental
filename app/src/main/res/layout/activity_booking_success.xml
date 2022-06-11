@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.BookingSuccessViewModel" />
+    </data>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingSuccessActivity"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@color/light_x_gray">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_primary500_10r"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_circle_72"
+                android:tint="@color/green" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:textSize="@dimen/text_largest"
+                android:text="@string/booking_success"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/light_gray"
+                android:textSize="@dimen/text_regular"
+                android:text="@string/booking_message"
+                android:layout_marginTop="10dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_light_xx_gray_10r"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="50dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_500"
+                android:textSize="@dimen/text_large"
+                android:text="@string/your_driver" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:driverPhoto="@{viewModel.photoUrl}"
+                    tools:src="@drawable/ic_person_72"
+                    android:layout_margin="10dp"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="@dimen/text_regular"
+                        tools:text="Driver Name"
+                        android:text="@{viewModel.driverName}"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="@dimen/text_small"
+                        tools:text="09967843540"
+                        android:text="@{viewModel.phoneNumber}"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TableDataLevel"
+                        android:text="@string/driver_age" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TableDataValue"
+                        tools:text="30"
+                        android:text="@{viewModel.age}"/>
+
+                </TableRow>
+
+                <TableRow android:layout_marginTop="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TableDataLevel"
+                        android:text="@string/car_number" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TableDataValue"
+                        tools:text="AA-1232"
+                        android:text="@{viewModel.carNumber}"/>
+
+                </TableRow>
+
+                <TableRow android:layout_marginTop="5dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TableDataLevel"
+                        android:text="@string/driver_rating" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView android:tint="@{viewModel.rating >= 1 ? @color/accent_200 : @color/light_gray}"
+                            style="@style/ProductRatingStar"/>
+                        <androidx.appcompat.widget.AppCompatImageView android:tint="@{viewModel.rating >= 2 ? @color/accent_200 : @color/light_gray}"
+                            style="@style/ProductRatingStar"/>
+                        <androidx.appcompat.widget.AppCompatImageView android:tint="@{viewModel.rating >= 3 ? @color/accent_200 : @color/light_gray}"
+                            style="@style/ProductRatingStar"/>
+                        <androidx.appcompat.widget.AppCompatImageView android:tint="@{viewModel.rating >= 4 ? @color/accent_200 : @color/light_gray}"
+                            style="@style/ProductRatingStar"/>
+                        <androidx.appcompat.widget.AppCompatImageView android:tint="@{viewModel.rating >= 5 ? @color/accent_200 : @color/light_gray}"
+                            style="@style/ProductRatingStar"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </TableRow>
+
+            </TableLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/call_him"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_primary500_5r"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ic_phone_24"
+            android:drawableTint="@color/white"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="-30dp"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:onClick="@{()->viewModel.onCallHimClicked()}"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_transparent"
+            android:onClick="@{()->viewModel.onHomeClicked()}"
+            android:text="@string/menu_home"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_200"
+            android:textSize="@dimen/text_regular" />
+
+        <androidx.appcompat.widget.AppCompatButton android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_your_booking"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/light_yellow"
+            android:background="@drawable/btn_dark_gray_5r"
+            android:textAllCaps="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="10dp"
+            android:onClick="@{()->viewModel.onSeeBookingClicked()}"/>
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

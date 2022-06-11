@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.viewmodel.FilterViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FilterActivity"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView android:text="@string/how_many_people"
+                style="@style/SubTitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_passenger"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_passenger_filter"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <androidx.appcompat.widget.AppCompatTextView android:text="@string/price_range_per_day"
+                style="@style/SubTitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_price_filter"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_accent200_5r"
+            android:text="@string/ok"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/text_regular"
+            android:textAllCaps="false"
+            android:onClick="@{()->viewModel.onFilterClicked()}"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

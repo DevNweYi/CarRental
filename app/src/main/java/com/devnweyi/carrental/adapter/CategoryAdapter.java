@@ -23,7 +23,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     public CategoryAdapter(SearchCarViewModel.ItemDataListener itemDataListener) {
         this.lstCategory = Collections.emptyList();
-        this.itemDataListener=itemDataListener;
+        this.itemDataListener = itemDataListener;
     }
 
     public void setCategory(List<CategoryModel> lstCategory) {
@@ -37,7 +37,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                 R.layout.item_category,
                 parent,
                 false);
-        return new CategoryViewHolder(binding,itemDataListener);
+        return new CategoryViewHolder(binding, itemDataListener);
     }
 
     @Override
@@ -54,15 +54,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         final ItemCategoryBinding binding;
         SearchCarViewModel.ItemDataListener itemDataListener;
 
-        public CategoryViewHolder(ItemCategoryBinding binding,SearchCarViewModel.ItemDataListener itemDataListener) {
+        public CategoryViewHolder(ItemCategoryBinding binding, SearchCarViewModel.ItemDataListener itemDataListener) {
             super(binding.cardView);
             this.binding = binding;
-            this.itemDataListener=itemDataListener;
+            this.itemDataListener = itemDataListener;
         }
 
         void bindCategory(CategoryModel categoryModel) {
             if (binding.getViewModel() == null) {
-                binding.setViewModel(new ItemCategoryViewModel(itemView.getContext(), categoryModel,this));
+                binding.setViewModel(new ItemCategoryViewModel(itemView.getContext(), categoryModel, this));
             } else {
                 binding.getViewModel().setCategoryModel(categoryModel);
             }
@@ -70,7 +70,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         @Override
         public void onProductByCategoryPrepared(List<ProductModel> lstProduct) {
-            SearchCarViewModel searchCarViewModel=new SearchCarViewModel(itemDataListener);
+            SearchCarViewModel searchCarViewModel = new SearchCarViewModel(itemDataListener);
             searchCarViewModel.getProductByCategory(lstProduct);
         }
     }

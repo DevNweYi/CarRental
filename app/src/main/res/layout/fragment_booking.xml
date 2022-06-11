@@ -1,22 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.booking.BookingFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.ui.booking.BookingDetailViewModel" />
+    </data>
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_500">
+
+        <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+             <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Booking"
+                android:textColor="@color/white"
+                 android:layout_gravity="center"
+                 android:gravity="center"
+                 android:padding="20dp"
+                 android:visibility="@{viewModel.noBookingVisible}"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.layoutDetailVisible}">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    app:detailPhotoInBookingDetail="@{viewModel.detailPhotoUrl}"
+                    tools:src="@drawable/ic_bus_56"
+                    android:layout_gravity="center"
+                    android:padding="20dp"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.productName}"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_larger"
+                        android:textColor="@color/white"
+                        tools:text="Sample Car"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.productDescription}"
+                        android:textSize="@dimen/text_small"
+                        android:textColor="@color/light_gray"
+                        tools:text="Sample Car Description"
+                        android:layout_marginTop="5dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.bookingDateTime}"
+                        android:textSize="@dimen/text_small"
+                        android:textColor="@color/light_gray"
+                        tools:text="Booked Date: 14/05/2022"
+                        android:layout_marginTop="5dp"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.pricePerDay.concat(@string/space).concat(@string/currency_mmk)}"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_regular"
+                            android:textColor="@color/white"
+                            tools:text="MMK 30,000"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/per_day"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_small"
+                            android:textColor="@color/light_gray" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_transparent"
+                        android:text="@string/car_detail"
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/text_small"
+                        android:textAllCaps="false"
+                        android:onClick="@{()->viewModel.onCarDetailClicked()}" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:background="@color/white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:text="Pyin Oo Lwin"
+                            android:textSize="@dimen/text_small"
+                            android:textColor="@color/black"
+                            android:text="@{viewModel.tripPlace}"/>
+
+                        <View style="@style/DividerHorizontal"/>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_yellow"
+                            android:padding="5dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/start_trip"
+                                    android:textSize="@dimen/text_small"
+                                    android:textColor="@color/black"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="22"
+                                    android:textSize="@dimen/text_larger"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.pickUpDay}"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="Sat, November"
+                                    android:textSize="@dimen/text_large"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.pickUpDate}"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="10:00 AM"
+                                    android:textSize="@dimen/text_small"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.pickUpTime}"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_arrow_circle_right_24"
+                                android:layout_gravity="center"
+                                app:tint="@color/accent_700"/>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/end_trip"
+                                    android:textSize="@dimen/text_small"
+                                    android:textColor="@color/black"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="30"
+                                    android:textSize="@dimen/text_larger"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.dropOffDay}"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="Sun, November"
+                                    android:textSize="@dimen/text_large"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.dropOffDate}"/>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="10:00 AM"
+                                    android:textSize="@dimen/text_small"
+                                    android:textColor="@color/black"
+                                    android:text="@{viewModel.dropOffTime}"/>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:text="@string/pick_up"
+                            style="@style/Label"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Label"
+                            tools:text="Pick up Address"
+                            android:textStyle="bold"
+                            android:text="@{viewModel.pickUpAddress}"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:text="@string/drop_off"
+                            style="@style/Label"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/Label"
+                            tools:text="Drop off Address"
+                            android:textStyle="bold"
+                            android:text="@{viewModel.dropOffAddress}"/>
+
+                        <!--rental days and amount-->
+                        <TableLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_x_gray"
+                            android:padding="10dp">
+
+                            <TableRow android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.appcompat.widget.AppCompatTextView style="@style/TableDataLevel"
+                                    android:text="@string/rental_day"
+                                    android:textSize="@dimen/text_small" />
+
+                                <androidx.appcompat.widget.AppCompatTextView android:id="@+id/tv_rental_day"
+                                    style="@style/TableDataValue"
+                                    android:text="@{viewModel.rentalDays}"
+                                    android:gravity="right"
+                                    tools:text="8 days"/>
+
+                            </TableRow>
+
+                            <TableRow android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.appcompat.widget.AppCompatTextView style="@style/TableDataLevel"
+                                    android:text="@string/amount"
+                                    android:textSize="@dimen/text_large" />
+
+                                <androidx.appcompat.widget.AppCompatTextView android:id="@+id/tv_amount"
+                                    style="@style/TableDataValue"
+                                    android:text="@{viewModel.totalAmount}"
+                                    android:gravity="right"
+                                    tools:text="MMK 30,000"/>
+
+                            </TableRow>
+
+                        </TableLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_transparent"
+                        android:text="@string/booking_cancel"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_small"
+                        android:textAllCaps="false"
+                        android:onClick="@{()->viewModel.onBookingCancelClicked()}" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_transparent"
+                        android:text="@string/view_driver"
+                        android:textColor="@color/accent_700"
+                        android:textSize="@dimen/text_small"
+                        android:textAllCaps="false"
+                        android:onClick="@{()->viewModel.onViewDriverClicked()}"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</layout>

@@ -25,9 +25,9 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_cancel"
                 style="@style/DialogCancel"
-                android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:onClick="@{()->viewModel.onCancelTime()}"/>
+                android:layout_alignParentStart="true"
+                android:onClick="@{()->viewModel.onCancelTime()}" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_ok"

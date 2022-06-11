@@ -8,11 +8,12 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_24"
             android:title="@string/menu_home"
-            android:iconTint="@color/primary_500"/>
+            android:iconTint="@color/primary_500"
+            android:visible="false"/>
         <item
             android:id="@+id/nav_search_car"
-            android:icon="@drawable/ic_search_24"
-            android:title="@string/menu_search_car"
+            android:icon="@drawable/ic_home_24"
+            android:title="@string/menu_home"
             android:iconTint="@color/primary_500"/>
         <item
             android:id="@+id/nav_booking"
@@ -31,7 +32,8 @@
             android:iconTint="@color/primary_500"/>
     </group>
 
-    <item android:title="">
+    <item android:title=""
+        android:visible="false">
         <menu>
             <item
                 android:id="@+id/nav_feedback"

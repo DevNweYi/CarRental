@@ -2,7 +2,10 @@ package com.devnweyi.carrental.viewmodel;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.devnweyi.carrental.BookingActivity;
 import com.devnweyi.carrental.api.Api;
 import com.devnweyi.carrental.model.ProductModel;
@@ -12,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.databinding.BaseObservable;
+import androidx.databinding.BindingAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -82,6 +86,10 @@ public class CarDetailViewModel extends BaseObservable {
         return productModel.isAircon();
     }
 
+    public String getDetailPhotoUrl(){
+        return productModel.getDetailPhotoUrl();
+    }
+
     private void getProductRating(int productId){
         (Api.getClient().getProductRating(productId)).enqueue(new Callback<List<ProductRatingModel>>() {
             @Override
@@ -95,7 +103,6 @@ public class CarDetailViewModel extends BaseObservable {
             public void onFailure(Call<List<ProductRatingModel>> call, Throwable t) {
                 // if error occurs in network transaction then we can get the error in this method.
                 Log.e("error",t.toString());
-                //setErrorMessage(t.toString());
             }
         });
     }
@@ -106,5 +113,10 @@ public class CarDetailViewModel extends BaseObservable {
 
     public interface DataListener {
         void onProductRatingLoaded(List<ProductRatingModel> lstProductRating);
+    }
+
+    @BindingAdapter("detailPhoto")
+    public static void loadDetailPhoto(ImageView view, String detailPhotoUrl) {
+        Glide.with(view.getContext()).load(detailPhotoUrl).apply(new RequestOptions()).into(view);
     }
 }

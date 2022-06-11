@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".GoogleMapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <ImageButton android:id="@+id/currentLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/map"
+        android:layout_alignEnd="@id/map"
+        android:layout_alignRight="@id/map"
+        android:layout_marginRight="30sp"
+        android:layout_marginBottom="30sp"
+        android:src="@drawable/ic_my_location_24"
+        app:tint="@color/black"
+        android:background="@drawable/btn_accent700_5r"
+        android:padding="10dp"/>
+
+</RelativeLayout>

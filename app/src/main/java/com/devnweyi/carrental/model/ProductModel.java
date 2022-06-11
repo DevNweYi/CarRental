@@ -9,7 +9,7 @@ public class ProductModel implements Parcelable {
 
     @Nullable
     int ProductID,CategoryID,TotalWindow,AllowPassengerNo,AllowPassengerBag,TotalSeat;
-    String ProductName,ProductDescription,PricePerDay,SpeedPerHour,GearSystem,Cylinder,FuelType;
+    String ProductName,ProductDescription,PricePerDay,SpeedPerHour,GearSystem,Cylinder,FuelType,SmallPhotoUrl,DetailPhotoUrl;
     boolean IsAircon;
 
     public int getProductID() {
@@ -124,6 +124,22 @@ public class ProductModel implements Parcelable {
         IsAircon = aircon;
     }
 
+    public String getSmallPhotoUrl() {
+        return SmallPhotoUrl;
+    }
+
+    public void setSmallPhotoUrl(String smallPhotoUrl) {
+        SmallPhotoUrl = smallPhotoUrl;
+    }
+
+    public String getDetailPhotoUrl() {
+        return DetailPhotoUrl;
+    }
+
+    public void setDetailPhotoUrl(String detailPhotoUrl) {
+        this.DetailPhotoUrl = detailPhotoUrl;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -144,6 +160,7 @@ public class ProductModel implements Parcelable {
         dest.writeString(this.GearSystem);
         dest.writeString(this.Cylinder);
         dest.writeString(this.FuelType);
+        dest.writeString(this.DetailPhotoUrl);
     }
 
     protected ProductModel(Parcel in){
@@ -160,6 +177,7 @@ public class ProductModel implements Parcelable {
         this.GearSystem=in.readString();
         this.Cylinder=in.readString();
         this.FuelType=in.readString();
+        this.DetailPhotoUrl=in.readString();
     }
 
     public static final Creator<ProductModel> CREATOR = new Creator<ProductModel>() {

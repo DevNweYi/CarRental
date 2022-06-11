@@ -12,6 +12,8 @@ public class CategoryModel {
     @SerializedName("CategoryName")
     String categoryName;
     boolean isSelected;
+    byte[] CategoryPhoto;
+    String CategoryPhotoUrl;
 
     @Nullable
     public int getCategoryId() {
@@ -37,5 +39,21 @@ public class CategoryModel {
 
     public void setSelected(boolean selected) {
         isSelected = selected;
+    }
+
+    public byte[] getCategoryPhoto() {
+        return CategoryPhoto;
+    }
+
+    public void setCategoryPhoto(byte[] categoryPhoto) {
+        CategoryPhoto = categoryPhoto;
+    }
+
+    public String getCategoryPhotoUrl() {
+        return CategoryPhotoUrl;
+    }
+
+    public void setCategoryPhotoUrl(String categoryPhotoUrl) {
+        CategoryPhotoUrl = categoryPhotoUrl;
     }
 }

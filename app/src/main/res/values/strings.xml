@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Car2Go</string>
+    <string name="app_name">CarRental</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -49,7 +49,7 @@
     <string name="seat">Seats</string>
     <string name="currency_mmk">MMK</string>
     <string name="space">\u0020</string>
-    <string name="trip_place">Enter your traveling place</string>
+    <string name="enter_traveling_place">Enter your traveling place</string>
     <string name="how_many_people">How many people</string>
     <string name="pick_up">Pick up</string>
     <string name="drop_off">Drop off</string>
@@ -71,5 +71,28 @@
     <string name="retry">Retry</string>
     <string name="back">Back</string>
     <string name="send">Send</string>
+    <string name="booking_success">Booking Successful</string>
+    <string name="booking_message">Your driver will contact you soon.</string>
+    <string name="your_driver">Your Driver</string>
+    <string name="driver_age">Driver Age</string>
+    <string name="car_number">Car Number</string>
+    <string name="driver_rating">Driver Rating</string>
+    <string name="call_him">Call him</string>
+    <string name="see_your_booking">See Your Booking</string>
+    <string name="notification">Notifications</string>
+    <string name="logout">Logout</string>
+    <string name="save">Save</string>
+    <string name="booking_cancel">Booking Cancel</string>
+    <string name="view_driver">View Driver</string>
+    <string name="start_trip">Start Trip</string>
+    <string name="end_trip">End Trip</string>
+    <string name="trip_place">Trip Place</string>
+    <string name="car_detail">Car Detail</string>
+    <string name="price_range_per_day">Price Range Per Day</string>
+    <string name="sort_by">Sort By</string>
+    <string name="default_sort">Default</string>
+    <string name="price_low_to_high">Price - Low to High</string>
+    <string name="price_high_to_low">Price - High to Low</string>
+    <string name="booking_unavailable_message">Booking Unavailable! You have already booked a car.</string>
 
 </resources>

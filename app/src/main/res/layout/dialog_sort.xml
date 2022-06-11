@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.devnweyi.carrental.ui.searchcar.SearchCarViewModel" />
+    </data>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView android:layout_weight="1"
+                android:layout_width="0dp"
+                style="@style/SubTitle"
+                android:text="@string/sort_by"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_24"
+                app:tint="@color/red"
+                android:onClick="@{()->viewModel.onSortDialogClose()}"
+                android:background="@drawable/btn_transparent"/>
+
+        </LinearLayout>
+
+        <View style="@style/DividerHorizontal"
+            android:background="@color/light_xx_gray"></View>
+
+        <TextView android:id="@+id/tvPriceLowToHigh"
+            style="@style/SubTitle"
+            android:padding="20dp"
+            android:background="@drawable/btn_transparent"
+            android:text="@string/price_low_to_high"
+            android:onClick="@{()->viewModel.onPriceLowToHigh()}"/>
+
+        <View style="@style/DividerHorizontal"
+            android:background="@color/light_xx_gray"></View>
+
+        <TextView android:id="@+id/tvPriceHighToLow"
+            style="@style/SubTitle"
+            android:text="@string/price_high_to_low"
+            android:padding="20dp"
+            android:background="@drawable/btn_transparent"
+            android:onClick="@{()->viewModel.onPriceHighToLow()}"/>
+
+        <View style="@style/DividerHorizontal"
+            android:background="@color/light_xx_gray"></View>
+
+    </LinearLayout>
+
+</layout>

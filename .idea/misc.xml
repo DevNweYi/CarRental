@@ -3,15 +3,52 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_accent200_5r.xml" value="0.19166666666666668" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_primary200_10r.xml" value="0.19166666666666668" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_accent700_5r.xml" value="0.15" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/drawable/btn_transparent.xml" value="0.2046875" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking.xml" value="0.1" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking_success.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_car_detail.xml" value="0.12962962962962962" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_filter.xml" value="0.33" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_google_maps.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_main.xml" value="0.18840579710144928" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_maps.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_sign_in.xml" value="0.15729166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/activity_sign_up.xml" value="0.15729166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/content_main.xml" value="0.1" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/dialog_sort.xml" value="0.3403693931398417" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/dialog_time_picker.xml" value="0.20416666666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/fragment_booking.xml" value="0.2" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/fragment_home.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/fragment_profile.xml" value="0.18529411764705883" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/fragment_search_car.xml" value="0.18" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/fragment_setting.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_category.xml" value="0.25" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_passenger.xml" value="0.20416666666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_passenger_filter.xml" value="0.33" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_price.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_price_filter.xml" value="0.17552083333333332" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_product.xml" value="0.1306532663316583" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/item_product_rating.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/nav_header_main.xml" value="0.15729166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/layout/notification.xml" value="0.18854166666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/NYA/Car Rental Project/CarRental/app/src/main/res/menu/main.xml" value="0.15729166666666666" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_light_gray.xml" value="0.19583333333333333" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_light_gray_5r.xml" value="0.19583333333333333" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_light_x_gray.xml" value="0.17708333333333334" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bd_primary200_10r.xml" value="0.17135416666666667" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bg_light_xx_gray_10r.xml" value="0.2046875" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/bg_primary500_10r.xml" value="0.17395833333333333" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_accent500_5r_content.xml" value="0.17708333333333334" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_accent700_5r.xml" value="0.17708333333333334" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_accent700_5r_content.xml" value="0.17708333333333334" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_black_5r.xml" value="0.2046875" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_black_5r_content.xml" value="0.2046875" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_light_x_gray.xml" value="0.19583333333333333" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_light_yellow.xml" value="0.15520833333333334" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_primary500_5r.xml" value="0.16770833333333332" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_primary_5r.xml" value="0.17135416666666667" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/btn_primary_5r_content.xml" value="0.17135416666666667" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.17777777777777778" />
@@ -48,6 +85,7 @@
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable/ic_sort_24.xml" value="0.17777777777777778" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/drawable/side_nav_bar.xml" value="0.20052083333333334" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking.xml" value="0.1" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking_success.xml" value="0.25" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_car_detail.xml" value="0.18" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_forgot_password.xml" value="0.1724137931034483" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_main.xml" value="0.24444444444444444" />
@@ -56,8 +94,9 @@
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_no_internet.xml" value="0.16302083333333334" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_search_car.xml" value="0.1" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_sign_in.xml" value="0.25" />
-        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
-        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_start.xml" value="0.23770491803278687" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_splash.xml" value="0.18" />
+        <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/activity_start.xml" value="0.2" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/app_bar_main.xml" value="0.184375" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/content_main.xml" value="0.17753623188405798" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/layout/dialog_time_picker.xml" value="0.1" />
@@ -79,6 +118,11 @@
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/NYA/Projects/Car Rental Project/CarRental/app/src/main/res/menu/menu_search_car.xml" value="0.22" />
+        <entry key="..\:/Workspace/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking.xml" value="0.12604166666666666" />
+        <entry key="..\:/Workspace/Car Rental Project/CarRental/app/src/main/res/layout/activity_booking_success.xml" value="0.1359375" />
+        <entry key="..\:/Workspace/Car Rental Project/CarRental/app/src/main/res/layout/activity_car_detail.xml" value="0.1640625" />
+        <entry key="..\:/Workspace/Car Rental Project/CarRental/app/src/main/res/layout/activity_main.xml" value="0.12380952380952381" />
+        <entry key="..\:/Workspace/Car Rental Project/CarRental/app/src/main/res/layout/fragment_search_car.xml" value="0.1203125" />
       </map>
     </option>
   </component>

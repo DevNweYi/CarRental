@@ -3,22 +3,21 @@ package com.devnweyi.carrental;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import com.devnweyi.carrental.adapter.CategoryAdapter;
-import com.devnweyi.carrental.adapter.ProductAdapter;
 import com.devnweyi.carrental.adapter.ProductRatingAdapter;
 import com.devnweyi.carrental.databinding.ActivityCarDetailBinding;
+import com.devnweyi.carrental.general.ConnectionLiveData;
+import com.devnweyi.carrental.general.SystemSetting;
+import com.devnweyi.carrental.model.ConnectionModel;
 import com.devnweyi.carrental.model.ProductModel;
 import com.devnweyi.carrental.model.ProductRatingModel;
-import com.devnweyi.carrental.ui.searchcar.SearchCarViewModel;
 import com.devnweyi.carrental.viewmodel.CarDetailViewModel;
 
 import java.util.List;
@@ -27,6 +26,7 @@ public class CarDetailActivity extends AppCompatActivity implements CarDetailVie
 
     ActivityCarDetailBinding binding;
     ProductModel productModel;
+    SystemSetting systemSetting=new SystemSetting();
 
     public static Intent newIntent(Context context, ProductModel productModel) {
         Intent intent = new Intent(context, CarDetailActivity.class);
@@ -41,12 +41,19 @@ public class CarDetailActivity extends AppCompatActivity implements CarDetailVie
         Intent i = getIntent();
         productModel = i.getParcelableExtra("ProductModel");
         binding.setViewModel(new CarDetailViewModel(this,productModel,this));
-        setTitle("");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         setupRecyclerView();
+
+        ConnectionLiveData connectionLiveData=new ConnectionLiveData(getApplicationContext());
+        connectionLiveData.observe(this, new Observer<ConnectionModel>() {
+            @Override
+            public void onChanged(ConnectionModel connectionModel) {
+                if (!connectionModel.getIsConnected()) systemSetting.showSnackBar(findViewById(R.id.rootLayout));
+            }
+        });
     }
 
     @Override

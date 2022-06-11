@@ -1,15 +1,17 @@
 package com.devnweyi.carrental;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,17 +20,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.devnweyi.carrental.databinding.ActivityBookingBinding;
+import com.devnweyi.carrental.general.AppConstants;
+import com.devnweyi.carrental.general.GpsUtils;
 import com.devnweyi.carrental.general.SystemSetting;
 import com.devnweyi.carrental.general.TimePickerDialog;
 import com.devnweyi.carrental.model.BookingModel;
+import com.devnweyi.carrental.model.DriverModel;
 import com.devnweyi.carrental.model.ProductModel;
 import com.devnweyi.carrental.viewmodel.BookingViewModel;
-import com.google.android.material.textfield.TextInputLayout;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class BookingActivity extends AppCompatActivity implements BookingViewModel.DataListener, TimePickerDialog.DataListener {
 
@@ -39,6 +41,8 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
     private final int PICKUP_DATE_PICKER =1,DROPOFF_DATE_PICKER=2;
     static boolean isPickUpLocation;
     int dayDiff;
+    SharedPreferences sharedpreferences;
+    private boolean isGPS = false;
 
     public static Intent newIntent(Context context, ProductModel productModel) {
         Intent intent = new Intent(context, BookingActivity.class);
@@ -52,7 +56,7 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
         binding= DataBindingUtil.setContentView(this,R.layout.activity_booking);
         Intent i=getIntent();
         productModel=i.getParcelableExtra("productModel");
-        bookingModel.setProductId(productModel.getProductID());
+        bookingModel.setProductID(productModel.getProductID());
         bookingModel.setProductName(productModel.getProductName());
         bookingModel.setPricePerDay(productModel.getPricePerDay());
         bookingModel.setPickUpDate(systemSetting.getTodayDate());
@@ -63,14 +67,24 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
         bookingModel.setDropOffDay(systemSetting.getDayOfWeek());
         bookingModel.setRentalDays(1+getResources().getString(R.string.space)+getResources().getString(R.string.days));
         bookingModel.setTotalAmount(productModel.getPricePerDay()+getResources().getString(R.string.space)+getResources().getString(R.string.currency_mmk));
+        bookingModel.setDetailPhotoUrl(productModel.getDetailPhotoUrl());
+        sharedpreferences= this.getSharedPreferences(SystemSetting.MyPREFERENCES, Context.MODE_PRIVATE);
+        bookingModel.setUserID(sharedpreferences.getInt(SystemSetting.UserID,0));
         binding.setViewModel(new BookingViewModel(this,bookingModel,this));
         binding.executePendingBindings();
         new TimePickerDialog(this);
-        setTitle("");
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        new GpsUtils(this).turnGpsOn(new GpsUtils.onGpsListener() {
+            @Override
+            public void gpsStatus(boolean isGPSEnable) {
+                // turn on GPS
+                isGPS = isGPSEnable;
+            }
+        });
     }
 
     @Override
@@ -87,8 +101,8 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
     @Override
     public void onResume(){
         super.onResume();
-        if(isPickUpLocation)binding.etPickUpLocation.setText(MapsActivity.selectedLocation);
-        else binding.etDropOffLocation.setText(MapsActivity.selectedLocation);
+        /*if(isPickUpLocation)binding.etPickUpLocation.setText(MapsActivity.selectedLocation);
+        else binding.etDropOffLocation.setText(MapsActivity.selectedLocation);*/
     }
 
     @BindingAdapter({"tripPlaceMessage"})
@@ -139,7 +153,20 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
     @Override
     public void onMapLoaded(boolean result){
         isPickUpLocation=result;
-        Intent i=new Intent(BookingActivity.this,MapsActivity.class);
+        //Intent i=new Intent(BookingActivity.this,MapsActivity.class);
+        Intent i=new Intent(BookingActivity.this,GoogleMapsActivity.class);
+        startActivity(i);
+    }
+
+    @Override
+    public void onBookingFail() {
+        Toast.makeText(this,this.getResources().getString(R.string.booking_unavailable_message),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onBookingSuccess(DriverModel driverModel){
+        Intent i=new Intent(BookingActivity.this,BookingSuccessActivity.class);
+        i.putExtra("DriverModel",driverModel);
         startActivity(i);
     }
 
@@ -236,4 +263,13 @@ public class BookingActivity extends AppCompatActivity implements BookingViewMod
         binding.tvAmount.setText(systemSetting.df.format(amount) + getResources().getString(R.string.space) + getResources().getString(R.string.currency_mmk));
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == AppConstants.GPS_REQUEST) {
+                isGPS = true; // flag maintain before get location
+            }
+        }
+    }
 }
